@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css">
+    <title>Register - MidnightConnect</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Create an account</h1>
+        <h4 class="g">Email:</h4>
+        <input type="text" placeholder="Email" class="email">
+        <h4>Password:</h4>
+        <input type="password" placeholder="Password" class="password">
+        <h4>Username:</h4>
+        <input type="email" placeholder="Username" class="password">
+        <p class="forgot-password">
+            <a href="{{url_for('login')}}">Already have an account?</a>
+        </p>
+        <button class="login">
+            Continue
+        </button>
+    </div>
+
+    <style>
+        body {
+    background-color: black;
+    background-size: cover;
+  }
+  
+  .container {
+    background-color: #2a2727;
+    border-radius: 10px;
+    width: 900px;
+    height: 590px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    box-shadow: 0 0 20px 5px #c585f7;
+  }
+  
+  .container h1 {
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    color: white;
+    margin-top: 5px;
+    text-align: center;
+    margin-left: 320px;
+    text-decoration: underline;
+    font-weight: bolder;
+  }
+
+
+  .container input {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    border: none;
+    background-color: black;
+    margin-left: 35px;
+    margin-top: 29px;
+    outline: none;
+    cursor: text;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  .container input:focus {
+    outline: none;
+  }
+  
+  
+  .container .email {
+    margin-bottom: 20px;
+  }
+  
+  .container .password {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .container .forgot-password {
+    color: white;
+    text-align: right;
+    margin-top: 1px;
+  }
+  
+  .container h4 {
+    color: white;
+    font-weight: bold;
+    margin-bottom: -10px;
+    font-size: 16px;
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    margin-left: 35px;
+    text-decoration: underline;
+  }
+
+  .g{
+    margin-bottom: -5px;
+  }
+
+  .container .forgot-password {
+    margin-top: 5px;
+    text-align: center;
+    margin-left: 35px;
+  }
+  
+  .container .forgot-password a {
+    color: #007fff;
+    font-weight: thin;
+    text-decoration: none;
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .login{
+    margin-left: 320px;
+    background-color: #007fff;
+    color: white;
+    height: 50px;
+    width: 220px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  .profile-picture {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 50%;
+    background-image: url(app.png);
+    background-size: cover;
+    border-radius: 155px;
+    margin-top: 100px;
+    margin-right: 65px;
+}
+
+.container .dob {
+    width: 30%;
+    padding: 10px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    border: none;
+    background-color: black;
+    margin-left: 35px;
+    margin-top: 29px;
+    outline: none;
+    cursor: text;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  @keyframes container{
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .container {
+    animation: fadeIn 10s;
+  }
+  
+  .profile-picture {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 50%;
+    background-image: url(app.png);
+    background-size: cover;
+    border-radius: 155px;
+    margin-top: 100px;
+    margin-right: 65px;
+}
+
+
+
+    </style>
+</body>
+</html>

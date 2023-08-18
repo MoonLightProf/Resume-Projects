@@ -1,0 +1,19 @@
+User can add a book, remove a book, borrow a book, read a book and buy a book.
+classes:
+    - Bank
+        - usernames+passwords aligned together
+        - transfer
+        - deposit
+        - withdraw
+        - check current balance
+    - Library
+        - authors - []
+        - bookmark feature - File IO
+        - add notes - File IO
+        - remove books - del self.books[i]
+        - add books - self.books.append[i]
+        - borrow books - remove books
+        - buy books - Bank(), del self.books[i]
+        - remember books - File IO
+
+#OOPS ONLY

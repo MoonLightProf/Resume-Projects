@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>MidnightCheckList</title>
+</head>
+<body>
+    <h1>My Tasks</h1>
+    <h1 id="taskTitle"></h1><br>
+    <button class="addtask" onclick="showTaskInput()">Add Task</button>
+    <button id="btn-login" class="addtask2"><a href="/">Back to dashboard</a></button>
+
+    <div class="tasklist"></div>
+
+
+    <style>
+         body {
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    font-size: bold;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: x-large;
+    font-family: 'Quicksand', sans-serif;
+    text-decoration: underline;
+    color: black;
+}
+
+.addtask {
+    display: inline-block;
+    width: 100px;
+    height: 34px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2a9df4;
+    background-position: 0 0;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; /* Add this line to establish a stacking context */
+    z-index: 1; /* Set initial z-index value */
+    text-decoration: none;
+}
+
+.addtask:hover {
+    background-position: 0 -21px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.tasklist {
+    background-color: black;
+    color: black;
+    font-weight: 100;
+    width: 45%;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+.task-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; 
+}
+
+.task-cell{
+    flex: 1;
+}
+
+.due-date-cell {
+    color: red !important; /* Not happening */
+    font-weight: 150;
+    margin-left: 100px;
+}
+
+
+
+.tasklist input {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: none;
+    font-size: 16px;
+}
+
+.tasklist input:focus {
+    outline: none;
+    border-color: #2a9df4;
+}
+
+
+
+.task-separator {
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+    margin: 15px 0; /* Adjust the spacing as desired */
+}
+
+
+.tasklist input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.tasklist .remove-task {
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}
+
+
+.check{
+    cursor: pointer;
+}
+
+.trash{
+    cursor: pointer;
+}
+
+.addtask {
+    display: block;
+    margin: 10px auto;
+    width: 100px;
+    height: 34px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2a9df4;
+    background-position: 0 0;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    z-index: 1;
+  }
+
+  .addtask:hover {
+    background-position: 0 -21px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+
+  .addtask2 {
+    display: inline-block;
+    width: 169px;
+    height: 34px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2a9df4;
+    background-position: 0 0;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; /* Add this line to establish a stacking context */
+    z-index: 1; /* Set initial z-index value */
+  }
+  
+  .addtask2:hover {
+    background-position: 0 -21px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+
+
+    </style>
+
+    <script>
+        let taskCounter = 1;
+        let addButtonClicked = false;
+
+        function showTaskInput() {
+            const taskList = document.querySelector(".tasklist");
+            const taskRow = document.createElement("div");
+            const taskId = `task-${taskCounter}`;
+            taskRow.className = "task-row";
+            taskRow.id = taskId;
+
+            const taskCell = document.createElement("div");
+            taskCell.className = "task-cell";
+
+            const taskInput = document.createElement("input");
+            taskInput.type = "text";
+            taskInput.id = `taskInput${taskId}`;
+            taskInput.placeholder = "Add a task";
+
+            const removeTaskButton = document.createElement("span");
+            removeTaskButton.className = "remove-task";
+            removeTaskButton.innerHTML = "🗑️";
+
+            taskCell.appendChild(taskInput);
+            taskCell.appendChild(removeTaskButton);
+
+            const dueDateCell = document.createElement("div");
+            dueDateCell.className = "due-date-cell";
+
+            const dueDateInput = document.createElement("input");
+            dueDateInput.type = "text";
+            dueDateInput.id = `dueDateInput${taskId}`;
+            dueDateInput.placeholder = "Due date";
+
+            const completeCheckbox = document.createElement("input");
+            completeCheckbox.type = "checkbox";
+            completeCheckbox.id = `completeCheckbox${taskId}`;
+            completeCheckbox.className = "check";
+            completeCheckbox.addEventListener("change", function () {
+                markTaskComplete(taskId);
+            });
+
+            dueDateCell.appendChild(dueDateInput);
+            dueDateCell.appendChild(completeCheckbox);
+
+            taskRow.appendChild(taskCell);
+            taskRow.appendChild(dueDateCell);
+
+            taskList.appendChild(taskRow);
+
+            taskInput.style.display = "block";
+            removeTaskButton.classList.remove("hidden");
+            completeCheckbox.classList.remove("hidden");
+
+            taskCounter++;
+            updateTaskTitle();
+            addHorizontalLine();
+
+            taskInput.focus();
+
+            removeTaskButton.addEventListener("click", function () {
+                removeTask(taskId);
+            });
+        }
+
+        function removeTask(taskId) {
+            const taskRow = document.getElementById(taskId);
+            const hr = taskRow.nextElementSibling;
+
+            taskRow.remove();
+
+            if (hr && hr.tagName === "HR") {
+                hr.remove(); // Remove the <hr> element
+            }
+        }
+
+        function updateTaskTitle() {
+            const taskTitle = document.getElementById("taskTitle");
+            const currentTaskInput = document.getElementById(`taskInput${taskCounter - 1}`);
+
+            if (currentTaskInput) {
+                taskTitle.textContent = currentTaskInput.value;
+            }
+        }
+
+        function addHorizontalLine() {
+            const tasklist = document.querySelector(".tasklist");
+            const hr = document.createElement("hr");
+            tasklist.appendChild(hr);
+        }
+
+        function markTaskComplete(taskId) {
+            const taskInput = document.getElementById(`taskInput${taskId}`);
+            const taskCell = taskInput.parentNode;
+            const completeCheckbox = document.getElementById(`completeCheckbox${taskId}`);
+
+            if (completeCheckbox.checked) {
+                taskCell.style.textDecoration = "line-through";
+            } else {
+                taskCell.style.textDecoration = "none";
+            }
+        }
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                const taskInput = document.getElementById(`taskInput${taskCounter - 1}`);
+                const dueDateInput = document.getElementById(`dueDateInput${taskCounter - 1}`);
+
+                if (addButtonClicked && taskInput && taskInput.value.trim() !== "") {
+                    taskInput.style.display = "none";
+                    dueDateInput.style.display = "none";
+                    addButtonClicked = !addButtonClicked;
+                    showTaskInput();
+                }
+            }
+        });
+
+        // Set initial focus on the first task input field
+        window.addEventListener("DOMContentLoaded", function () {
+            const taskInput = document.getElementById(`taskInput${taskCounter - 1}`);
+            taskInput.focus();
+        });
+
+        // Event listener for the remove task button using event delegation
+        const taskList = document.querySelector(".tasklist");
+        taskList.addEventListener("click", function (event) {
+            if (event.target.classList.contains("remove-task")) {
+                const taskRow = event.target.closest(".task-row");
+                const taskId = taskRow.id;
+                const hr = taskRow.nextElementSibling; // Get the next sibling (the <hr> element)
+
+                removeTask(taskId);
+
+                if (hr.tagName === "HR") {
+                    hr.remove(); // Remove the <hr> element
+                }
+            }
+        });
+    </script>
+  
+
+    
+
+  
+
+    
+</body>
+</html>

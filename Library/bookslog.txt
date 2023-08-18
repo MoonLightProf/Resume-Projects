@@ -1,0 +1,116 @@
+Number of books at the end of the day. Date: (2023-08-01 00:00:17.469817):
+PYTHON PROGRAMMING
+CONCISE MATHEMATICS
+BOY
+
+Number of books at the end of the day. Date: (2023-08-01 18:38:37.156945): 
+PYTHON PROGRAMMING
+CONCISE MATHEMATICS
+
+Number of books at the end of the day. Date: (2023-08-02 21:25:58.940412): 
+PYTHON PROGRAMMING
+CONCISE MATHEMATICS
+BOY
+BELOVED
+HOUNDS OF THE BASKERVILLES
+TO KILL A MOCKING BIRD
+
+Number of books at the end of the day. Date: (2023-08-02 21:27:08.772353): 
+PYTHON PROGRAMMING
+CONCISE MATHEMATICS
+BOY
+DATA ANALYSIS WITH PYTHON
+
+Number of books at the end of the day. Date: (2023-08-02 21:55:02.871316): 
+
+Number of books at the end of the day. Date: (2023-08-02 22:07:16.703532): 
+
+Number of books at the end of the day. Date: (2023-08-02 22:07:50.725148): 
+
+Number of books at the end of the day. Date: (2023-08-02 22:16:52.180190): 
+
+Number of books at the end of the day. Date: (2023-08-02 22:20:10.871951): 
+PYTHON MACHINE LEARNING
+BELOVED
+
+Number of books at the end of the day. Date: (2023-08-02 22:23:20.445940): 
+BELOVED
+PYTHON PROGRAMMING
+CONCISE MATHEMATICS
+CONCISE PHYSICS
+BOY
+PYTHON FOR MACHINE LEARNING
+STATISTICS
+PROGRAMMING WITH JAVA
+
+Number of books at the end of the day. Date: (2023-08-02 22:41:14.817438): 
+
+Number of books at the end of the day. Date: (2023-08-02 22:42:52.086167): 
+BELOVED
+TO KILL A MOCKING BIRD
+PYTHON DATA ANALYSIS
+
+Number of books at the end of the day. Date: (2023-08-02 22:50:54.941324): 
+BELOVED
+JANE EYRE
+PYTHON PROGRAMMING
+CONCISE MATHS
+PHYSICS
+BIOLOGY 
+HOUND OF THE BASKERVILLES
+
+Number of books at the end of the day. Date: (2023-08-02 22:53:02.736442): 
+BELOVED/USR/LOCAL/BIN/PYTHON3 /USERS/AYAANHUSSAIN/DESKTOP/RESUME/LIBRARY/MAIN.PY
+
+Number of books at the end of the day. Date: (2023-08-02 23:14:45.118793): 
+JAVA
+MATHS
+JANE EYRE
+
+Number of books at the end of the day. Date: (2023-08-03 00:50:35.484048): 
+
+Number of books at the end of the day. Date: (2023-08-03 00:57:25.656298): 
+BELOVED
+CONCISE PHYSICS
+
+Number of books at the end of the day. Date: (2023-08-03 13:13:46.743992): 
+BELOVED
+JANE EYRE
+CONCISE PHYSICS
+HOT SUMMERS
+
+Number of books at the end of the day. Date: (2023-08-03 14:08:43.440489): 
+JANE EYRE
+HOUND OF THE BASKERVILLES
+MACBETH
+BELOVED
+
+Number of books at the end of the day. Date: (2023-08-03 14:12:00.724227): 
+MACBETH
+HOUND OF THE BASKERVILLES
+
+Number of books at the end of the day. Date: (2023-08-03 14:15:10.648255): 
+PYTHON PROGRAMMING
+CONCISE MATHEMATICS
+BOY
+BELOVED
+MACBETH
+JANE EYRE
+RD SHARMA - MATHS CLASS 12
+
+Number of books at the end of the day. Date: (2023-08-05 20:25:09.573873): 
+BOY
+
+Number of books at the end of the day. Date: (2023-08-08 00:21:38.929457): 
+PYTHON PROGRAMMING
+BOY
+JANE EYRE
+PHYSICS 
+RD SHARMA MATHS
+
+Number of books at the end of the day. Date: (2023-08-13 14:31:19.161424): 
+PYTHON PROGRAMMING
+CONCISE MATHEMATICS
+
+Number of books at the end of the day. Date: (2023-08-13 16:26:57.904857): 
+CONCISE MATHEMATICS

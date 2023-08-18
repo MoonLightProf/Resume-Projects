@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>MidnightInsights</title>
+</head>
+<body>
+    <h1>MidnightInsights: Your Trusted News App!</h1>
+    <div class="wrap">
+        <form method="POST" action="{{ url_for('home') }}">
+            <div class="search">
+                <input type="text" class="searchTerm" name="search" placeholder="What are you looking for?">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search">🔍</i>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="news">
+        {% if articles %}
+            {% for article in articles %}
+            <div class="article">
+                <h2>{{ article.title }}</h2>
+                <p>{{ article.description }}</p>
+                <a href="{{ article.url }}" target="_blank">Read More</a>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No articles found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

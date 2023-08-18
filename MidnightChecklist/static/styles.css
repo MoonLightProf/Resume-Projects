@@ -1,0 +1,133 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    font-size: bold;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: x-large;
+    font-family: 'Quicksand', sans-serif;
+    text-decoration: underline;
+    color: black;
+}
+
+.addtask {
+    display: inline-block;
+    width: 100px;
+    height: 34px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2a9df4;
+    background-position: 0 0;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; /* Add this line to establish a stacking context */
+    z-index: 1; /* Set initial z-index value */
+}
+
+.addtask:hover {
+    background-position: 0 -21px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.tasklist {
+    background-color: black;
+    color: black;
+    font-weight: 100;
+    width: 45%;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+.task-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; 
+}
+
+.task-cell{
+    flex: 1;
+}
+
+.due-date-cell {
+    color: red !important; /* Not happening */
+    font-weight: 150;
+    margin-left: 100px;
+}
+
+
+
+.tasklist input {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: none;
+    font-size: 16px;
+}
+
+.tasklist input:focus {
+    outline: none;
+    border-color: #2a9df4;
+}
+
+
+
+.task-separator {
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+    margin: 15px 0; /* Adjust the spacing as desired */
+}
+
+
+.tasklist input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.tasklist .remove-task {
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}
+
+
+.check{
+    cursor: pointer;
+}
+
+.trash{
+    cursor: pointer;
+}
+
+.addtask {
+    display: block;
+    margin: 10px auto;
+    width: 100px;
+    height: 34px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2a9df4;
+    background-position: 0 0;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    z-index: 1;
+  }
+
+  .addtask:hover {
+    background-position: 0 -21px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
